@@ -1,0 +1,71 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="admin.css" />
+  <script src="https://kit.fontawesome.com/90456d5308.js" crossorigin="anonymous"></script>
+  <!-- Firebase App (core) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <!-- Firebase Realtime Database -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+  <link rel="icon" href="./img/cerveja.png">
+</head>
+<body>
+  <div class="header">
+    <h1><strong>Painel</strong> Administrativo</h1>
+    <a href="index.html" class="logout">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Sair
+    </a>
+  </div>
+
+  <hr />
+
+  <div class="cards-container" id="cardsContainer">
+    <div class="card add-card" id="openModal">
+      <div class="plus">+</div>
+      <div class="title">Adicionar novo item</div>
+    </div>
+  </div>
+
+  <!-- Modal de criação/edição -->
+  <div class="overlay" id="modalOverlay">
+    <div class="modal">
+      <h2 id="modalTitle">Criar Novo Produto</h2>
+      <form id="createForm">
+        <label for="itemName">Nome do item</label>
+        <input type="text" id="itemName" name="itemName" required />
+
+        <label for="itemDesc">Descrição do item</label>
+        <textarea id="itemDesc" name="itemDesc" rows="5" required></textarea>
+
+        <label for="itemPrice">Valor</label>
+        <input type="number" id="itemPrice" name="itemPrice" step="0.01" required />
+
+        <label for="itemCategory">Categoria</label>
+        <select id="itemCategory" name="itemCategory" required>
+          <option value="all">Todos</option>
+          <option value="geladas">Bebidas Geladas</option>
+          <option value="quentes">Bebidas Quentes</option>
+          <option value="petiscos">Petiscos</option>
+          <option value="pf">Prato Feito</option>
+        </select>
+
+        <label for="itemImage">Imagem do item</label>
+        <input type="file" id="itemImage" name="itemImage" accept="image/*" />
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

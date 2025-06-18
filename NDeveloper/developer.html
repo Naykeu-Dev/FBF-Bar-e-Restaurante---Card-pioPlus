@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naykeu Developer</title>
+    <link rel="stylesheet" href="dev.css">
+
+    <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/90456d5308.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Projects and Contact Section -->
+<section id="projects-contact">
+  <!-- Contact -->
+    <div class="section-header text-center mb-4">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p class="section-subtitle">Naykeu Araújo Luz — Developer<br>Disponível para novos projetos e parcerias.</p>
+    </div>
+    <div class="contact-actions text-center">
+      <a href="https://wa.me/5589994378466" class="contact-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:naykeudeveloper@gmail.com" class="contact-btn email-btn"><i class="fas fa-envelope"></i> Gmail</a>
+      <a href="https://github.com/Naykeu-Dev" target="_blank" class="contact-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
+
+  <br><br><br>
+  
+  <div class="container">
+    <!-- Projects -->
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Meus Projetos</h2>
+      <p class="section-subtitle">Explore alguns dos trabalhos que desenvolvi. Clique para acessar cada demo em tempo real!</p>
+    </div>
+    <div class="row g-4 justify-content-center mb-5">
+
+
+      <!-- Projeto 1 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="./imgDev/eotf.png" class="project-img" alt="Projeto 1">
+          <div class="project-content text-center">
+            <h5 class="project-title">Engergie of the Future</h5>
+            <p class="project-desc">Sistema de informação sobre energias renováveis, com sistemas de custo e calculadora simulativos e demonstrativos.</p>
+            <a href="https://blackrobinn.github.io/Energie-of-the-Future/" target="_blank" class="project-btn">Acessar Projeto</a>
+          </div>
+        </div>
+      </div>
+      <!-- Projeto 2 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="./imgDev/stockplus.png" class="project-img" alt="Projeto 2">
+          <div class="project-content text-center">
+            <h5 class="project-title">Stock Plus</h5>
+            <p class="project-desc">Sistema de estoque de roupas.</p>
+            <a href="https://blackrobinn.github.io/Stock-Plus/" target="_blank" class="project-btn">Acessar Projeto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<script>
+  // Dados cadastrados
+  const whatsappNumber = "5589994378466"; // Mantenha apenas números
+  const emailAddress = "naykeudeveloper@gmail.com";
+
+  // WhatsApp
+  document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open(`https://wa.me/${whatsappNumber}`, '_blank');
+  });
+
+  // Gmail
+  document.getElementById('emailBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    const subject = encodeURIComponent("Contato do Site");
+    const body = encodeURIComponent("Olá Naykeu, gostaria de entrar em contato com você!");
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
