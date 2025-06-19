@@ -17,6 +17,7 @@
   --text-light: #666;
   --gap: 20px;
   --desc-max-height: 80px;
+  --desc-limit: 900;
 
   --ff-display: 'Montserrat', sans-serif;
   --clr-main: #2c3e50;
@@ -40,6 +41,11 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+}
+
+/* Remove o espaçamento padrão de parágrafos dentro do card */
+.card-body p {
+  margin: 0;
 }
 
 /* NAV */
@@ -424,15 +430,7 @@ main {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--text-dark);
-}
-
-.item-desc {
-  padding: 0 10px;
-  font-size: 0.9rem;
-  color: var(--text-light);
-  max-height: var(--desc-max-height);
-  overflow: hidden;
-}
+}   
 
 .read-more {
   color: var(--primary);
