@@ -19,25 +19,30 @@
     let allItems = [];
 
     function renderMenu(items) {
-      menuList.innerHTML = '';
-      items.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'col-sm-6 col-md-4 col-lg-3';
-        li.innerHTML = `
-          <div class="card h-100">
-            <img src="${item.image}" class="card-img-top" alt="${item.name}">
-            <div class="card-body">
-              <h5 class="card-title">${item.name}</h5>
-              <p class="card-text text-muted">${item.desc}</p>
-            </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
-              <span class="price-tag">R$ ${parseFloat(item.price).toFixed(2)}</span>
-            </div>
-          </div>
-        `;
-        menuList.appendChild(li);
-      });
-    }
+  menuList.innerHTML = '';
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.className = 'col-sm-6 col-md-4 col-lg-3';
+    li.innerHTML = `
+      <div class="card h-100">
+        <img src="${item.image}"
+             class="card-img-top"
+             alt="${item.name}"
+             style="cursor: zoom-in;">
+        <div class="card-body">
+          <h5 class="card-title">${item.name}</h5>
+          <p class="card-text text-muted item-desc">
+            ${item.desc.replace(/\n/g, '<br>')}
+          </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <span class="price-tag">R$ ${parseFloat(item.price).toFixed(2)}</span>
+        </div>
+      </div>`;
+    menuList.appendChild(li);
+  });
+}
+
 
     // Filtro
     filterBtns.forEach(btn => {
